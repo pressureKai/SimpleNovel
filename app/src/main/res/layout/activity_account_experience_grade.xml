@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/person_account_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+    </android.support.v7.widget.Toolbar>
+    <TextView
+        android:id="@+id/person_account_money_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/person_account_toolbar"
+        android:text="更多"
+        android:padding="5dp"
+        android:textColor="#000"
+        android:textSize="25sp"/>
+    <com.simplynovel.zekai.simplynovel.ui.MyAccountItemView
+        android:id="@+id/person_account_book_money"
+        xmlns:myaccount = "http://schemas.android.com/apk/res/com.simplynovel.zekai.simplynovel"
+        myaccount:my_account_icon ="@mipmap/baseline_account_box_black_24"
+        myaccount:my_account_des = "当前等级"
+        myaccount:my_account_data="10000级"
+        myaccount:my_account_img="0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/person_account_money_root"/>
+
+    <com.simplynovel.zekai.simplynovel.ui.MyAccountItemView
+        android:id="@+id/person_account_book_token"
+        xmlns:myaccount = "http://schemas.android.com/apk/res/com.simplynovel.zekai.simplynovel"
+        myaccount:my_account_icon ="@mipmap/baseline_account_box_black_24"
+        myaccount:my_account_des = "升级进度"
+        myaccount:my_account_data="4260/7670"
+        myaccount:my_account_img="0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/person_account_book_money"/>
+
+    <com.simplynovel.zekai.simplynovel.ui.MyAccountItemView
+        android:id="@+id/person_account_book_change_center"
+        xmlns:myaccount = "http://schemas.android.com/apk/res/com.simplynovel.zekai.simplynovel"
+        myaccount:my_account_icon ="@mipmap/baseline_account_box_black_24"
+        myaccount:my_account_des = "等级排名"
+        myaccount:my_account_data="超过37.86%的用户"
+        myaccount:my_account_img="0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/person_account_book_token"/>
+
+
+    <TextView
+        android:id="@+id/account_record"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/person_account_book_change_center"
+        android:text="等级特权"
+        android:padding="5dp"
+        android:textColor="#000"
+        android:textSize="25sp"/>
+
+    <com.simplynovel.zekai.simplynovel.ui.MyAccountItemView
+        android:id="@+id/person_account_book_recharge_record"
+        xmlns:myaccount = "http://schemas.android.com/apk/res/com.simplynovel.zekai.simplynovel"
+        myaccount:my_account_icon ="@mipmap/baseline_account_box_black_24"
+        myaccount:my_account_des = "达到2级"
+        myaccount:my_account_data="发布话题书评"
+        myaccount:my_account_img="0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/account_record"/>
+
+    <com.simplynovel.zekai.simplynovel.ui.MyAccountItemView
+        android:id="@+id/person_account_book_consume_record"
+        xmlns:myaccount = "http://schemas.android.com/apk/res/com.simplynovel.zekai.simplynovel"
+        myaccount:my_account_icon ="@mipmap/baseline_account_box_black_24"
+        myaccount:my_account_des = "达到3级"
+        myaccount:my_account_data="发布书荒求助"
+        myaccount:my_account_img="0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/person_account_book_recharge_record"/>
+
+    <com.simplynovel.zekai.simplynovel.ui.MyAccountItemView
+        android:id="@+id/person_account_book_grade_4"
+        xmlns:myaccount = "http://schemas.android.com/apk/res/com.simplynovel.zekai.simplynovel"
+        myaccount:my_account_icon ="@mipmap/baseline_account_box_black_24"
+        myaccount:my_account_des = "达到4级"
+        myaccount:my_account_data="修改头像"
+        myaccount:my_account_img="0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/person_account_book_consume_record"/>
+
+    <com.simplynovel.zekai.simplynovel.ui.MyAccountItemView
+        android:id="@+id/person_account_book_grade_n"
+        xmlns:myaccount = "http://schemas.android.com/apk/res/com.simplynovel.zekai.simplynovel"
+        myaccount:my_account_icon ="@mipmap/baseline_account_box_black_24"
+        myaccount:my_account_des = "达到N级"
+        myaccount:my_account_data="更多特权即将上线"
+        myaccount:my_account_img="0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/person_account_book_grade_4"/>
+        <TextView
+            android:id="@+id/account_record_des"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/person_account_book_grade_n"
+            android:text="等级说明"
+            android:padding="5dp"
+            android:textColor="#000"
+            android:textSize="25sp"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/account_record_des"
+            android:layout_alignParentRight="true"
+            android:text="查询任务"/>
+    </RelativeLayout>
+
+
+</ScrollView>

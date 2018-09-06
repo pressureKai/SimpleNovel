@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/person_message_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:id="@+id/person_message_icon_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/person_message_toolbar"
+        android:padding="10dp">
+
+
+        <ImageView
+            android:id="@+id/person_message_icon"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:id="@+id/person_message_des"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="头像" />
+
+        <ImageView
+            android:id="@+id/person_account_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/person_message_next"
+            android:layout_centerVertical="true"/>
+
+        <ImageView
+            android:id="@+id/person_message_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@mipmap/baseline_navigate_next_black_24" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/person_message_name_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/person_message_icon_root"
+        android:padding="10dp">
+
+
+        <TextView
+            android:id="@+id/person_message_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/person_next_name_img"
+            android:text="XZK" />
+
+        <TextView
+            android:id="@+id/person_message_name_des"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="昵称" />
+
+        <ImageView
+            android:id="@+id/person_next_name_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@mipmap/baseline_navigate_next_black_24" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/person_message_sex_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/person_message_name_root"
+        android:padding="10dp">
+
+
+        <TextView
+            android:id="@+id/person_message_sex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/person_next_sex_img"
+            android:text="男" />
+
+        <TextView
+            android:id="@+id/person_message_name_sex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="性别" />
+
+        <ImageView
+            android:id="@+id/person_next_sex_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@mipmap/baseline_navigate_next_black_24" />
+    </RelativeLayout>
+</RelativeLayout>

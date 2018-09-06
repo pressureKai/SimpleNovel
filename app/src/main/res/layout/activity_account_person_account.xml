@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/person_account_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+    </android.support.v7.widget.Toolbar>
+    <TextView
+        android:id="@+id/person_account_money_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/person_account_toolbar"
+        android:text="财产"
+        android:padding="5dp"
+        android:textColor="#000"
+        android:textSize="25sp"/>
+    <com.simplynovel.zekai.simplynovel.ui.MyAccountItemView
+        android:id="@+id/person_account_book_money"
+        xmlns:myaccount = "http://schemas.android.com/apk/res/com.simplynovel.zekai.simplynovel"
+        myaccount:my_account_icon ="@mipmap/baseline_account_box_black_24"
+        myaccount:my_account_des = "书币"
+        myaccount:my_account_data="10000枚"
+        myaccount:my_account_img ="@mipmap/baseline_account_box_black_24"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/person_account_money_root"/>
+
+    <com.simplynovel.zekai.simplynovel.ui.MyAccountItemView
+        android:id="@+id/person_account_book_token"
+        xmlns:myaccount = "http://schemas.android.com/apk/res/com.simplynovel.zekai.simplynovel"
+        myaccount:my_account_icon ="@mipmap/baseline_account_box_black_24"
+        myaccount:my_account_des = "书券"
+        myaccount:my_account_data="10000张"
+        myaccount:my_account_img ="@mipmap/baseline_account_box_black_24"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/person_account_book_money"/>
+
+    <com.simplynovel.zekai.simplynovel.ui.MyAccountOtherItemView
+        android:id="@+id/person_account_book_change_center"
+        xmlns:myaccount = "http://schemas.android.com/apk/res/com.simplynovel.zekai.simplynovel"
+        myaccount:my_account_other_icon ="@mipmap/baseline_account_box_black_24"
+        myaccount:my_account_other_des = "兑换中心"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/person_account_book_token"/>
+
+
+    <TextView
+        android:id="@+id/account_record"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/person_account_book_change_center"
+        android:text="记录"
+        android:padding="5dp"
+        android:textColor="#000"
+        android:textSize="25sp"/>
+
+    <com.simplynovel.zekai.simplynovel.ui.MyAccountOtherItemView
+        android:id="@+id/person_account_book_recharge_record"
+        xmlns:myaccount = "http://schemas.android.com/apk/res/com.simplynovel.zekai.simplynovel"
+        myaccount:my_account_other_icon ="@mipmap/baseline_account_box_black_24"
+        myaccount:my_account_other_des = "充值记录"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/account_record"/>
+
+    <com.simplynovel.zekai.simplynovel.ui.MyAccountOtherItemView
+        android:id="@+id/person_account_book_consume_record"
+        xmlns:myaccount = "http://schemas.android.com/apk/res/com.simplynovel.zekai.simplynovel"
+        myaccount:my_account_other_icon ="@mipmap/baseline_account_box_black_24"
+        myaccount:my_account_other_des = "消费记录"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/person_account_book_recharge_record"/>
+
+</RelativeLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="com.simplynovel.zekai.simplynovel.ui.MyFindItemView">
+        <attr name="my_icon" format="integer" />
+        <attr name="my_des" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="com.simplynovel.zekai.simplynovel.ui.MyAccountItemView">
+        <attr name="my_account_icon" format="integer" />
+        <attr name="my_account_data" format="string" />
+        <attr name="my_account_des" format="string" />
+        <attr name="my_account_img" format="integer" />
+    </declare-styleable>
+    <declare-styleable name="com.simplynovel.zekai.simplynovel.ui.MyAccountOtherItemView">
+        <attr name="my_account_other_icon" format="integer" />
+        <attr name="my_account_other_des" format="string" />
+    </declare-styleable>
+</resources>

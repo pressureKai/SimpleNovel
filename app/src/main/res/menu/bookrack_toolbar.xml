@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/gift"
+        android:icon="@mipmap/round_card_giftcard_black_24"
+        android:title="gift"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/search"
+        android:icon="@mipmap/round_search_black_24"
+        android:title="search"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/history"
+        android:icon="@mipmap/round_access_time_black_24"
+        android:title="history"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/more"
+        android:icon="@mipmap/round_more_horiz_black_24"
+        android:title="more"
+        app:showAsAction="always" />
+</menu>

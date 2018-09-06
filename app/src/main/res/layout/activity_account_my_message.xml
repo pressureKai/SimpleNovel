@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/person_account_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+    </android.support.v7.widget.Toolbar>
+    <com.simplynovel.zekai.simplynovel.ui.MyFindItemView
+        android:paddingTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:bookfind="http://schemas.android.com/apk/res/com.simplynovel.zekai.simplynovel"
+        bookfind:my_icon = "@mipmap/baseline_message_black_24"
+        bookfind:my_des ="通知">
+    </com.simplynovel.zekai.simplynovel.ui.MyFindItemView>
+    <View
+        android:padding="5dp"
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#918f8f"/>
+
+     <TextView
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:padding="5dp"
+         android:text="与我相关"
+         android:textColor="#000"
+         android:textSize="20sp"/>
+</LinearLayout>

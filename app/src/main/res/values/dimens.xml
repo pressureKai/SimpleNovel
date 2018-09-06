@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="book_list_tab">5sp</dimen>
+    <dimen name="book_shelf_tab">8sp</dimen>
+</resources>

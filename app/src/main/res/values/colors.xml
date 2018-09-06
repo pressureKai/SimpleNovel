@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#269f97</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="card_background_color">#fff</color>
+    <color name="more_background">@android:color/darker_gray</color>
+    <color name="find_blue">#0b12e4</color>
+    <color name="find_purple">#b50fca</color>
+    <color name="find_red">#ed0961</color>
+    <color name="conversion_rec">#dacbcb</color>
+    <color name="city_bg_color">#dedbdb</color>
+    <color name="book_list_select">#ba1717</color>
+    <color name="book_list_unselect">#504f4f</color>
+    <color name="text_color">@android:color/darker_gray</color>
+</resources>
