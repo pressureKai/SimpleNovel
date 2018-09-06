@@ -19,6 +19,7 @@ import com.simplynovel.zekai.simplynovel.ui.Adapter.BookAccountAdapter;
  */
 
 public class BookAccountFragment extends Fragment {
+
     private LinearLayoutManager linearLayoutManager;
     private BookAccountAdapter bookaccountAdapter;
     private DataAccount dataAccount = new DataAccount();
