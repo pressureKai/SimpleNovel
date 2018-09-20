@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/ll_picture"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            android:layout_weight="0.999">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+               <RelativeLayout
+                   android:padding="5dp"
+                   android:layout_width="match_parent"
+                   android:layout_height="100dp">
+                   <android.support.v4.view.ViewPager
+                       android:id="@+id/picture_viewpager"
+                       android:background="@drawable/picture_bg"
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent">
+                   </android.support.v4.view.ViewPager>
+
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="40dp"
+                       android:padding="5dp"
+                       android:orientation="vertical"
+                       android:layout_alignParentBottom="true"
+                       android:gravity="center_horizontal"
+                       android:background="#66000000" >
+
+                       <TextView
+                           android:id="@+id/picture_bookname"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:textColor="@android:color/white"
+                           android:singleLine="true"
+                           android:textSize="15sp"
+                           android:text="圣墟" />
+
+                       <LinearLayout
+                           android:id="@+id/ll_point_container"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_marginTop="5dp"
+                           android:orientation="horizontal"
+                           >
+                       </LinearLayout>
+                   </LinearLayout>
+               </RelativeLayout>
+
+
+
+                <com.simplynovel.zekai.simplynovel.ui.ScrollListView
+                    android:id="@+id/picture_listview"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                	android:divider="@null"
+                    android:dividerHeight="10dp"
+                    android:layout_weight="0.7">
+                </com.simplynovel.zekai.simplynovel.ui.ScrollListView>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.001"/>
+</LinearLayout>
