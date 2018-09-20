@@ -12,6 +12,15 @@ import android.view.ViewGroup;
 import com.simplynovel.zekai.simplynovel.R;
 import com.simplynovel.zekai.simplynovel.domain.DataAccount;
 import com.simplynovel.zekai.simplynovel.ui.Adapter.BookAccountAdapter;
+import com.simplynovel.zekai.simplynovel.utils.HttpUtils;
+
+import java.io.IOException;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.FormBody;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 
 /**
@@ -61,6 +70,36 @@ public class BookAccountFragment extends Fragment {
         if (activity.getSupportActionBar().isShowing()) {
             activity.getSupportActionBar().hide();
         }
+    }
+
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if (isVisibleToUser) {
+            connect();
+        }else{
+
+        }
+    }
+
+    private void connect() {
+
+        RequestBody requestBody = new FormBody.Builder()
+                .add("type", "")
+                .add("state","0")
+                .build();
+        HttpUtils.sendOkHttpRequest("http://10.0.3.2:8888/SimpleNovel/SelectBookFromDb", requestBody, new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+
+            }
+        });
     }
 
 }

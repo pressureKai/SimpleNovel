@@ -9,9 +9,13 @@ import android.widget.TextView;
 import com.simplynovel.zekai.simplynovel.R;
 import com.simplynovel.zekai.simplynovel.activity.SearchActivity;
 import com.simplynovel.zekai.simplynovel.activity.SearchResultActivity;
+import com.simplynovel.zekai.simplynovel.domain.SearchHistory;
 import com.simplynovel.zekai.simplynovel.utils.UIUtils;
 
+import org.litepal.crud.DataSupport;
+
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by 15082 on 2018/9/4.
@@ -36,6 +40,15 @@ public class SearchHotWordAdpter extends RecyclerView.Adapter<SearchHotWordAdpte
                 Intent intent = new Intent(UIUtils.getContext(),SearchResultActivity.class);
                 intent.putExtra("word", searchword);
                 searchActivity.startActivity(intent);
+                List<SearchHistory> all = DataSupport.findAll(SearchHistory.class);
+                for (SearchHistory searchHistory1 : all) {
+                    if (searchHistory1.getBookName().equals(searchword)) {
+                        DataSupport.deleteAll(SearchHistory.class, "bookName = ?", searchword);
+                    }
+                }
+                SearchHistory searchHistory = new SearchHistory();
+                searchHistory.setBookName(searchword);
+                searchHistory.save();
             }
         });
         return holder;

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_picture"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:paddingTop="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.99"
+        android:orientation="horizontal">
+
+
+        <ListView
+            android:id="@+id/lv_book_rank"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+        </ListView>
+
+        <ListView
+            android:paddingLeft="4dp"
+            android:id="@+id/lv_book_rank_content"
+            android:layout_width="0dp"
+            android:divider="@null"
+            android:dividerHeight="2dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3">
+        </ListView>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.01"/>
+
+</LinearLayout>

@@ -22,8 +22,11 @@ import com.simplynovel.zekai.simplynovel.activity.AccountPersonActivity;
 import com.simplynovel.zekai.simplynovel.activity.AccountReadHistoryActivity;
 import com.simplynovel.zekai.simplynovel.activity.AccountTopicActivity;
 import com.simplynovel.zekai.simplynovel.activity.BookRackActivity;
+import com.simplynovel.zekai.simplynovel.activity.LoginActivity;
 import com.simplynovel.zekai.simplynovel.domain.DataAccount;
 import com.simplynovel.zekai.simplynovel.ui.BookConversionDialog;
+import com.simplynovel.zekai.simplynovel.utils.ConstantValues;
+import com.simplynovel.zekai.simplynovel.utils.SharedPreferenceUtils;
 import com.simplynovel.zekai.simplynovel.utils.UIUtils;
 
 /**
@@ -64,9 +67,9 @@ public class BookAccountAdapter extends RecyclerView.Adapter {
 
         public AccountNameViewHolder(View itemView) {
             super(itemView);
-            mAccountMsg = (RelativeLayout) itemView.findViewById(R.id.account_msg);
-            mAccountName = (TextView) itemView.findViewById(R.id.account_name_tv);
-            mAccountIcon = (ImageView) itemView.findViewById(R.id.account_icon_img);
+            mAccountMsg = itemView.findViewById(R.id.account_msg);
+            mAccountName = itemView.findViewById(R.id.account_name_tv);
+            mAccountIcon = itemView.findViewById(R.id.account_icon_img);
         }
 
         public void setmAccountName(String accountName) {
@@ -87,11 +90,11 @@ public class BookAccountAdapter extends RecyclerView.Adapter {
 
         public AccountStateViewHolder(View itemView) {
             super(itemView);
-            mAccountState = (RelativeLayout) itemView.findViewById(R.id.account_state);
-            mDesText = (TextView) itemView.findViewById(R.id.account_des_text);
-            mDesImg = (ImageView) itemView.findViewById(R.id.account_des_left_img);
-            mBookMoney = (TextView) itemView.findViewById(R.id.book_money);
-            mBookToken = (TextView) itemView.findViewById(R.id.book_token);
+            mAccountState = itemView.findViewById(R.id.account_state);
+            mDesText = itemView.findViewById(R.id.account_des_text);
+            mDesImg = itemView.findViewById(R.id.account_des_left_img);
+            mBookMoney = itemView.findViewById(R.id.book_money);
+            mBookToken = itemView.findViewById(R.id.book_token);
         }
 
         public void setmDesText(String des) {
@@ -119,10 +122,10 @@ public class BookAccountAdapter extends RecyclerView.Adapter {
 
         public AccountImgViewHolder(View itemView) {
             super(itemView);
-            mAccountInformation = (RelativeLayout) itemView.findViewById(R.id.account_information);
-            mFunctionDes = (TextView) itemView.findViewById(R.id.account_function_des);
-            mFunctionIcon = (ImageView) itemView.findViewById(R.id.account_function_icon);
-            mDesImg = (ImageView) itemView.findViewById(R.id.account_des_img);
+            mAccountInformation = itemView.findViewById(R.id.account_information);
+            mFunctionDes = itemView.findViewById(R.id.account_function_des);
+            mFunctionIcon = itemView.findViewById(R.id.account_function_icon);
+            mDesImg = itemView.findViewById(R.id.account_des_img);
         }
 
         public void setmFunctionDes(String des) {
@@ -146,10 +149,10 @@ public class BookAccountAdapter extends RecyclerView.Adapter {
 
         public AccountTextViewHolder(View itemView) {
             super(itemView);
-            mAccountDesTextInformation = (RelativeLayout) itemView.findViewById(R.id.account_des_text_information);
-            mFunctionDes = (TextView) itemView.findViewById(R.id.account_function_des);
-            mFunctionIcon = (ImageView) itemView.findViewById(R.id.account_function_icon);
-            mDes = (TextView) itemView.findViewById(R.id.account_des);
+            mAccountDesTextInformation = itemView.findViewById(R.id.account_des_text_information);
+            mFunctionDes = itemView.findViewById(R.id.account_function_des);
+            mFunctionIcon = itemView.findViewById(R.id.account_function_icon);
+            mDes = itemView.findViewById(R.id.account_des);
         }
 
         public void setmFunctionDes(String des) {
@@ -194,8 +197,14 @@ public class BookAccountAdapter extends RecyclerView.Adapter {
             public void onClick(View v) {
                 switch (position) {
                     case 0:
-                        Intent intent = new Intent(mContext, AccountPersonMessageActivity.class);
-                        mContext.startActivity(intent);
+                        if(SharedPreferenceUtils.getBoolean(UIUtils.getContext(), ConstantValues.ISLOGIN,false)){
+                            Intent intent = new Intent(mContext, AccountPersonMessageActivity.class);
+                            mContext.startActivity(intent);
+                        }else{
+                            Intent intent = new Intent(mContext, LoginActivity.class);
+                            mContext.startActivity(intent);
+                        }
+
                         break;
                     case 1:
                         Intent intent_1 = new Intent(mContext, AccountPersonMessageActivity.class);

@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.simplynovel.zekai.simplynovel.R;
+import com.simplynovel.zekai.simplynovel.ui.BookBaseFragment;
 import com.simplynovel.zekai.simplynovel.ui.BookListFragment;
 import com.simplynovel.zekai.simplynovel.ui.Adapter.BookListViewPagerAdapter;
 
@@ -44,7 +45,6 @@ public class AccountBookListActivity extends AppCompatActivity implements View.O
             fragments.add(fragment);
             strings.add(tabTitle);
         }
-
     }
 
 
@@ -62,23 +62,6 @@ public class AccountBookListActivity extends AppCompatActivity implements View.O
         mViewPager = (ViewPager) findViewById(R.id.viewpager);
         mViewPager.setAdapter(new BookListViewPagerAdapter(getSupportFragmentManager(), strings, fragments));
         mTabLayout.setupWithViewPager(mViewPager);
-        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
-
         mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
@@ -136,7 +119,7 @@ public class AccountBookListActivity extends AppCompatActivity implements View.O
         overridePendingTransition(R.anim.pre_in_anim, R.anim.pre_out_anim);
     }
     public View getTabView(int position) {
-        View view = LayoutInflater.from(this).inflate(R.layout.book_list_fragment, null);
+        View view = LayoutInflater.from(this).inflate(R.layout.book_list_tab_fragment, null);
         TextView tv = (TextView) view.findViewById(R.id.tv_tab_title);
         tv.setText(tabTitles[position]);
         return view;

@@ -1,82 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
 
     <LinearLayout
-        android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="10dp">
+
         <EditText
-            android:padding="5dp"
+            android:focusableInTouchMode="false"
+            android:focusable="false"
             android:id="@+id/search_ed"
             android:layout_width="0dp"
-            android:layout_weight="9"
-            android:lines="1"
             android:layout_height="wrap_content"
+            android:layout_weight="9"
             android:background="@drawable/edit_selector"
-            android:hint="书名,作者,分类"/>
+            android:hint="书名,作者,分类"
+            android:lines="1"
+            android:padding="5dp" />
+
         <TextView
-            android:paddingLeft="5dp"
+            android:id="@+id/bt_search"
             android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="搜索"
-            android:layout_height="wrap_content" />
+            android:paddingLeft="5dp"
+            android:text="搜索" />
     </LinearLayout>
 
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:orientation="vertical"
         android:layout_height="wrap_content">
-        <TextView
-            android:padding="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:textColor="#000"
-            android:text="搜索热词"/>
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/search_rcy"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        </android.support.v7.widget.RecyclerView>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical">
+
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:layout_width="0dp"
-                android:layout_weight="8"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:text="搜索热词"
                 android:textColor="#000"
-                android:text="搜索历史"/>
+                android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/del_history"
-                android:layout_width="0dp"
-                android:layout_weight="2"
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/search_rcy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </android.support.v7.widget.RecyclerView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="删除历史"/>
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="8"
+                    android:padding="10dp"
+                    android:text="搜索历史"
+                    android:textColor="#000"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/del_history"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="删除历史" />
+            </LinearLayout>
+
+
+            <com.simplynovel.zekai.simplynovel.ui.ScrollListView
+                android:id="@+id/search_history"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </com.simplynovel.zekai.simplynovel.ui.ScrollListView>
+
+
         </LinearLayout>
-
-
-          <ListView
-              android:id="@+id/search_history"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content">
-          </ListView>
-    </LinearLayout>
-</ScrollView>
+    </ScrollView>
 
 </LinearLayout>

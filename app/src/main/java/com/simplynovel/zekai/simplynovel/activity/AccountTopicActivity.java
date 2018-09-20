@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.simplynovel.zekai.simplynovel.R;
 import com.simplynovel.zekai.simplynovel.ui.BookListFragment;
 import com.simplynovel.zekai.simplynovel.ui.Adapter.BookListViewPagerAdapter;
+import com.simplynovel.zekai.simplynovel.utils.UIUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -136,7 +137,7 @@ public class AccountTopicActivity extends AppCompatActivity implements View.OnCl
         overridePendingTransition(R.anim.pre_in_anim, R.anim.pre_out_anim);
     }
     public View getTabView(int position) {
-        View view = LayoutInflater.from(this).inflate(R.layout.book_list_fragment, null);
+        View view = LayoutInflater.from(this).inflate(R.layout.book_topic_tab_fragment, null);
         TextView tv = (TextView) view.findViewById(R.id.tv_tab_title);
         tv.setText(tabTitles[position]);
         return view;

@@ -6,11 +6,13 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Process;
 
+import org.litepal.LitePalApplication;
+
 /**    自定义application ,进行全局初始化
  * Created by 15082 on 2018/6/13.
  */
 
-public class SimplyNovelApplication extends Application {
+public class SimplyNovelApplication extends LitePalApplication {
     private static  Context context;
     private static Handler handler;
     private static int mainThreadId;

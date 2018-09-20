@@ -5,13 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,7 +16,7 @@ import android.widget.TextView;
 import com.simplynovel.zekai.simplynovel.activity.BookRackActivity;
 import com.simplynovel.zekai.simplynovel.activity.SearchActivity;
 import com.simplynovel.zekai.simplynovel.R;
-import com.simplynovel.zekai.simplynovel.ui.Adapter.BookListViewPagerAdapter;
+import com.simplynovel.zekai.simplynovel.ui.Adapter.BookRankTypeAdapter;
 import com.simplynovel.zekai.simplynovel.utils.UIUtils;
 
 import java.util.ArrayList;
@@ -39,7 +34,7 @@ public class BookCityFragment extends Fragment implements View.OnClickListener {
     private TabLayout mTabLayout;
     private ViewPager mViewPager;
     private List<String> strings = new ArrayList<>();
-    private List<BookListFragment> fragments = new ArrayList<BookListFragment>();
+    private List<BookBaseFragment> fragments = new ArrayList<BookBaseFragment>();
     private String[] tabTitles = {"玄幻", "奇幻","武侠","仙侠","都市", "军事","其他"};
 
 
@@ -60,7 +55,7 @@ public class BookCityFragment extends Fragment implements View.OnClickListener {
 
     private void initData() {
         for (String tabTitle : tabTitles) {
-            BookListFragment fragment = new BookListFragment();
+            BookBaseFragment fragment = new BookBaseFragment(bookRackActivity,tabTitle);
             fragments.add(fragment);
             strings.add(tabTitle);
         }
@@ -72,24 +67,8 @@ public class BookCityFragment extends Fragment implements View.OnClickListener {
         ll_search.setOnClickListener(this);
         mTabLayout = (TabLayout) view.findViewById(R.id.tab_layout);
         mViewPager = (ViewPager) view.findViewById(R.id.viewpager);
-        mViewPager.setAdapter(new BookListViewPagerAdapter(bookRackActivity.getSupportFragmentManager(), strings, fragments));
+        mViewPager.setAdapter(new BookRankTypeAdapter(bookRackActivity.getSupportFragmentManager(), strings, fragments));
         mTabLayout.setupWithViewPager(mViewPager);
-        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
 
         mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -144,7 +123,7 @@ public class BookCityFragment extends Fragment implements View.OnClickListener {
         }
     }
     public View getTabView(int position) {
-        View view =UIUtils.inflate(R.layout.book_city_fragment);
+        View view = UIUtils.inflate(R.layout.book_city_fragment);
         TextView tv = (TextView) view.findViewById(R.id.tv_tab_title);
         tv.setText(tabTitles[position]);
         return view;

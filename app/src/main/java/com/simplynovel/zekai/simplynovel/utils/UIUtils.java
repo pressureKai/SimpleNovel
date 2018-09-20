@@ -7,6 +7,7 @@ import com.simplynovel.zekai.simplynovel.global.SimplyNovelApplication;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.os.Process;
+import android.util.DisplayMetrics;
 import android.view.View;
 
 /**
@@ -54,6 +55,19 @@ public class UIUtils {
     //获取一个尺寸的像素值
     public static int getDimen(int id){
         return getContext().getResources().getDimensionPixelSize(id);
+    }
+
+
+    public static int getScreenWidth(Context context){
+        DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
+        int widthPixels = displayMetrics.widthPixels;
+        return widthPixels;
+    }
+
+    public static int getScreenHeight(Context context){
+        DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
+        int widthPixels = displayMetrics.heightPixels;
+        return widthPixels;
     }
 
 

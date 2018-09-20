@@ -8,4 +8,6 @@ public class ConstantValues {
     public static final String ISAUTOREFRESH = "isautorefresh";
     public static final String NAMESPACE = "http://schemas.android.com/apk/res/com.simplynovel.zekai.simplynovel";
     public static final String NAMESPACE_MY_ACCOUNT = "http://schemas.android.com/apk/res/com.simplynovel.zekai.simplynovel.ui.MyAccountItemView";
+    public static final String ISLOGIN = "islogin";
+    public static final String ISAUTOLOGIN = "isautologin" ;
 }

@@ -51,7 +51,7 @@ public class AccountBookQuestionActivity extends AppCompatActivity implements Vi
 
     @SuppressLint("RestrictedApi")
     private void initUI() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.person_account_toolbar);
+        Toolbar toolbar = findViewById(R.id.person_account_toolbar);
         setSupportActionBar(toolbar);
         ActionBar supportActionBar = getSupportActionBar();
         if (supportActionBar != null) {
@@ -59,27 +59,10 @@ public class AccountBookQuestionActivity extends AppCompatActivity implements Vi
             supportActionBar.setTitle("书荒提问");
         }
         toolbar.setOnClickListener(this);
-        mTabLayout = (TabLayout) findViewById(R.id.tab_layout);
-        mViewPager = (ViewPager) findViewById(R.id.viewpager);
+        mTabLayout = findViewById(R.id.tab_layout);
+        mViewPager = findViewById(R.id.viewpager);
         mViewPager.setAdapter(new BookListViewPagerAdapter(getSupportFragmentManager(), strings, fragments));
         mTabLayout.setupWithViewPager(mViewPager);
-        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
-
         mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {

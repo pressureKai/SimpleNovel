@@ -4,8 +4,6 @@ package com.simplynovel.zekai.simplynovel.ui.Adapter;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-
-
 import com.simplynovel.zekai.simplynovel.ui.BookListFragment;
 
 import java.util.List;

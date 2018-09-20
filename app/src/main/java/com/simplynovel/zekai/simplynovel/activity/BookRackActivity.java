@@ -76,7 +76,7 @@ public class BookRackActivity extends AppCompatActivity {
 
             }
         });
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 4; i++) {
             bottom_tab_bookshelf_layout.addTab(bottom_tab_bookshelf_layout.newTab().setCustomView(DataTab.getTabView(i)));
         }
     }
@@ -90,13 +90,13 @@ public class BookRackActivity extends AppCompatActivity {
             case 1:
                 fragment = new BookCityFragment(this);
                 break;
+//            case 2:
+//                fragment = new BookCommunityFragment();
+//                break;
             case 2:
-                fragment = new BookCommunityFragment();
+                fragment = new BookFindFragment(this);
                 break;
             case 3:
-                fragment = new BookFindFragment();
-                break;
-            case 4:
                 fragment = new BookAccountFragment();
                 break;
 
@@ -105,7 +105,7 @@ public class BookRackActivity extends AppCompatActivity {
 
         if (fragment != null) {
 
-            if (lastPosition == 5 || position == 0) {
+            if (lastPosition == 4 || position == 0) {
                 getSupportFragmentManager().beginTransaction().replace(R.id.bookshelf_contain, fragment).commit();
                 lastPosition = position;
             } else if (position > lastPosition) {
