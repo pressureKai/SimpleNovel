@@ -38,5 +38,7 @@
    小说阅读设置模块：
    
    ![小说阅读模块](https://github.com/pressureKai/SimpleNovel/blob/master/readPageSetting.png)      
+   ![小说阅读模块](https://github.com/pressureKai/SimpleNovel/blob/master/readPageSetting1.png)    
+   ![小说阅读模块](https://github.com/pressureKai/SimpleNovel/blob/master/readPageSetting2.png)    
    
    
