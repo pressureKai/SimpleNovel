@@ -29,4 +29,4 @@
        
        
    项目截图:
-   ![Alt text](https://github.com/username/repository/raw/master/directory/file.jpg/png)       
+   ![小说阅读模块](https://github.com/pressureKai/SimpleNovel/blob/master/readPage.png)       
