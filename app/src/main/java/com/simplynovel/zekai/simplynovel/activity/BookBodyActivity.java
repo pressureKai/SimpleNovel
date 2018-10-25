@@ -107,7 +107,7 @@ public class BookBodyActivity extends AppCompatActivity implements View.OnClickL
         initUI();
         fileName = SharedPreferenceUtils.getString(this,ConstantValues.FILENAME);
         if(fileName.equals(" ")){
-            if(FileUtils.write2files("append wo",fileName)){
+            if(FileUtils.write2files("",fileName)){
                 handler.sendEmptyMessage(0);
             }
         }else{
