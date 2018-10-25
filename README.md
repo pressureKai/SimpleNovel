@@ -45,4 +45,23 @@
    
    ![小说阅读模块](https://github.com/pressureKai/SimpleNovel/blob/master/readPageSetting2.jpg)    
    
+   书城 :
+   
+    ![小说阅读模块](https://github.com/pressureKai/SimpleNovel/blob/master/bookCity.jpg)    
+    
+   书本查找 ：
+    
+    
+    ![小说阅读模块](https://github.com/pressureKai/SimpleNovel/blob/master/bookSearch.jpg)    
+    
+    
+    ![小说阅读模块](https://github.com/pressureKai/SimpleNovel/blob/master/bookSearchResult.jpg)   
+    
+    ![小说阅读模块](https://github.com/pressureKai/SimpleNovel/blob/master/bookDetail.jpg)   
+    
+ 
+    
+    
+    
+   
    
