@@ -64,6 +64,19 @@
    ![小说阅读模块](https://github.com/pressureKai/SimpleNovel/blob/master/bookDetail.jpg)   
     
  
+    书本排行 ：
+    
+   ![小说阅读模块](https://github.com/pressureKai/SimpleNovel/blob/master/bookRank.jpg)   
+    
+    
+    
+    书本分类 ：
+    
+   ![小说阅读模块](https://github.com/pressureKai/SimpleNovel/blob/master/bookType.jpg)   
+   
+   
+   ![小说阅读模块](https://github.com/pressureKai/SimpleNovel/blob/master/bookTypeDetail.jpg)   
+    
     
     
     
