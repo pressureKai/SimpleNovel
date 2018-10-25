@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="@color/find_blue"/>
+    <!--<solid android:color="@color/find_blue"/>-->
+    <gradient
+        android:endColor="#3360f2"
+        android:startColor="#1d3486"/>
+
     <corners android:radius="3dp"/>
 </shape>

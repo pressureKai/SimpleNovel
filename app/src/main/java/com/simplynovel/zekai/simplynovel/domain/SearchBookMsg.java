@@ -2,7 +2,9 @@ package com.simplynovel.zekai.simplynovel.domain;
 
 import org.litepal.crud.LitePalSupport;
 
-public class SearchBookMsg extends LitePalSupport{
+import java.io.Serializable;
+
+public class SearchBookMsg extends LitePalSupport implements Serializable {
 
 	public String getImg() {
 		return img;

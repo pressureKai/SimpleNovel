@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <TextView
-        android:padding="100dp"
-        android:textColor="#000"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="............"/>
+   <com.simplynovel.zekai.simplynovel.ui.PictureView
+       android:paddingTop="5dp"
+       android:id="@+id/picture_view"
+       android:layout_width="match_parent"
+       android:layout_marginBottom="10dp"
+       android:layout_height="60dp">
+   </com.simplynovel.zekai.simplynovel.ui.PictureView>
 
     <TextView
-        android:padding="10dp"
+        android:layout_marginTop="2dp"
         android:textColor="#000"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="圣墟"
-        android:id="@+id/tx_search_history"/>
+        android:textSize="12sp"
+        android:paddingLeft="20dp"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/tx_type"/>
 </LinearLayout>

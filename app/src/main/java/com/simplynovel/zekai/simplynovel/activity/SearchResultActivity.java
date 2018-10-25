@@ -6,11 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.os.Parcelable;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -24,6 +26,7 @@ import com.simplynovel.zekai.simplynovel.ui.Adapter.SearchResultAdapter;
 import com.simplynovel.zekai.simplynovel.utils.HttpUtils;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
@@ -38,7 +41,7 @@ import okhttp3.Response;
  * Created by 15082 on 2018/9/5.
  */
 
-public class SearchResultActivity extends AppCompatActivity implements View.OnClickListener {
+public class SearchResultActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
     private RequestBody requestBody;
     private EditText search_ed;
     private  String word;
@@ -79,6 +82,7 @@ public class SearchResultActivity extends AppCompatActivity implements View.OnCl
             }
         });
         lt_search_result = (ListView) findViewById(R.id.lt_search_result);
+        lt_search_result.setOnItemClickListener(this);
         tv_search_result = (TextView)findViewById(R.id.tv_search_result);
         tv_search_result.setOnClickListener(this);
     }
@@ -149,5 +153,12 @@ public class SearchResultActivity extends AppCompatActivity implements View.OnCl
 
                 break;
         }
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+          Intent intent = new Intent(this,BookDetailActivity.class);
+          intent.putExtra("BookMsg", (Serializable) searchBookMsgs.get(position));
+          startActivity(intent);
     }
 }

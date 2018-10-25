@@ -11,8 +11,14 @@
         <attr name="my_account_des" format="string" />
         <attr name="my_account_img" format="integer" />
     </declare-styleable>
+
     <declare-styleable name="com.simplynovel.zekai.simplynovel.ui.MyAccountOtherItemView">
         <attr name="my_account_other_icon" format="integer" />
         <attr name="my_account_other_des" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="CircleImageView">
+            <attr name="border_width" format="dimension" />
+            <attr name="border_color" format="color" />
     </declare-styleable>
 </resources>

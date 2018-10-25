@@ -2,10 +2,11 @@
 <litepal>
     <dbname value="simplenovel"></dbname>
 
-    <version value="1"></version>
+    <version value="2"></version>
 
     <list>
         <mapping class="com.simplynovel.zekai.simplynovel.domain.SearchHistory"></mapping>
         <mapping class="com.simplynovel.zekai.simplynovel.domain.SearchBookMsg"></mapping>
+        <mapping class="com.simplynovel.zekai.simplynovel.ui.pageWidget.db.BookList"></mapping>
     </list>
 </litepal>

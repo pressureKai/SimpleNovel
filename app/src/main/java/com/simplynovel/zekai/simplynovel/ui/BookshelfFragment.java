@@ -94,6 +94,10 @@ public class BookshelfFragment extends Fragment implements AdapterView.OnItemCli
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = new Intent(UIUtils.getContext(), BookBodyActivity.class);
-        startActivity(intent);
+        if(position < bookName.size()){
+            intent.putExtra("bookName",bookName.get(position));
+            startActivity(intent);
+        }
+
     }
 }

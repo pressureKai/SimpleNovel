@@ -6,6 +6,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.simplynovel.zekai.simplynovel.R;
+import com.simplynovel.zekai.simplynovel.domain.BookTypeData;
 import com.simplynovel.zekai.simplynovel.utils.UIUtils;
 
 import java.util.ArrayList;
@@ -18,13 +19,14 @@ import java.util.List;
 public class TypeMenuAdapter extends BaseAdapter {
     private int selectItem = 0;
     private List<String> menus;
+    private BookTypeData bookTypeData;
 
-    public TypeMenuAdapter() {
+    public TypeMenuAdapter(BookTypeData bookTypeData) {
+        this.bookTypeData = bookTypeData;
         menus = new ArrayList<>();
-        menus.add("圣墟");
-        menus.add("圣墟");
-        menus.add("圣墟");
-        menus.add("圣墟");
+        for(int i =0; i< bookTypeData.getTypeNames().size(); i++){
+            menus.add(bookTypeData.getTypeNames().get(i));
+        }
     }
 
     @Override

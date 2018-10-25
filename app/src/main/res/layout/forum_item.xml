@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <com.simplynovel.zekai.simplynovel.ui.pageWidget.CircleImageView
+        android:id="@+id/img_forum"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_margin="5dp"
+        android:layout_weight="1"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_margin="5dp"
+        android:layout_weight="9"
+        android:orientation="vertical"
+        android:paddingTop="2dp">
+
+        <TextView
+            android:id="@+id/tv_forum_name"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textSize="10sp"
+            android:textColor="#000" />
+
+
+        <TextView
+            android:id="@+id/tv_forum_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:layout_marginLeft="2dp"
+            android:lines="2"
+            android:textColor="#000"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/tv_forum_updatetime"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textColor="#000"
+            android:textSize="10sp" />
+    </LinearLayout>
+</LinearLayout>

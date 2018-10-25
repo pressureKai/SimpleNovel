@@ -15,12 +15,25 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.simplynovel.zekai.simplynovel.R;
+import com.simplynovel.zekai.simplynovel.domain.BookRankMsg;
+import com.simplynovel.zekai.simplynovel.domain.BookTypeData;
 import com.simplynovel.zekai.simplynovel.ui.Adapter.TypeContentAdapter;
 import com.simplynovel.zekai.simplynovel.ui.Adapter.TypeMenuAdapter;
+import com.simplynovel.zekai.simplynovel.utils.HttpUtils;
 
+import java.io.IOException;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.FormBody;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 /**
  * Created by 15082 on 2018/9/11.
@@ -34,6 +47,8 @@ public class BookTypeActivity extends AppCompatActivity {
     private List<Integer> tag;
     private int newPosition = 0;
     private int currentMenuItem = 0;
+    private RequestBody requestBody;
+    private List<BookTypeData> bookTypeDatas;
     @SuppressLint("HandlerLeak")
     private Handler handler = new Handler() {
         @Override
@@ -46,6 +61,14 @@ public class BookTypeActivity extends AppCompatActivity {
                     lv_content.setAdapter(typeContentAdapter);
                     lv_content.setSelection(newPosition);
                     break;
+                case 1 :
+                    tag = new ArrayList<>();
+                    for (int i = 0; i < bookTypeDatas.size()-1; i++) {
+                        tag.add(i);
+                    }
+                    initUI();
+                    initAdapter(bookTypeDatas);
+                    break;
             }
         }
     };
@@ -54,20 +77,45 @@ public class BookTypeActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_type);
-        tag = new ArrayList<>();
-        for (int i = 0; i < 4; i++) {
-            tag.add(i);
-        }
-        initUI();
-        initAdapter();
+        connect();
     }
 
-    private void initAdapter() {
+    private void connect() {
+        requestBody = new FormBody.Builder()
+                .build();
+        HttpUtils.sendOkHttpRequest("http://10.0.3.2:8888/SimpleNovel/GetBookTypeFromQiDian", requestBody,
+                new Callback() {
+                    @Override
+                    public void onFailure(Call call, IOException e) {
 
-        typeMenuAdapter = new TypeMenuAdapter();
-        typeContentAdapter = new TypeContentAdapter();
-        lv_menu.setAdapter(typeMenuAdapter);
-        lv_content.setAdapter(typeContentAdapter);
+                    }
+
+                    @Override
+                    public void onResponse(Call call, Response response) throws IOException {
+                        String string = response.body().string();
+                        Gson gson = new Gson();
+                        Type listType = new TypeToken<List<BookTypeData>>() {
+                        }.getType();
+                        bookTypeDatas = new ArrayList<BookTypeData>();
+                        bookTypeDatas = gson.fromJson(string, listType);
+                        if (bookTypeDatas != null && bookTypeDatas.size() > 0) {
+                            handler.sendEmptyMessage(1);
+                        }
+                    }
+                });
+
+    }
+
+    private void initAdapter(List<BookTypeData> bookTypeDatas) {
+        if(bookTypeDatas != null){
+            if(bookTypeDatas.size() > 0){
+                typeMenuAdapter = new TypeMenuAdapter(bookTypeDatas.get(0));
+                typeContentAdapter = new TypeContentAdapter(this,bookTypeDatas);
+                lv_menu.setAdapter(typeMenuAdapter);
+                lv_content.setAdapter(typeContentAdapter);
+            }
+        }
+
     }
 
     private void initUI() {
@@ -90,7 +138,6 @@ public class BookTypeActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
                 TextView red_line = parent.findViewById(R.id.red_line);
                 red_line.setVisibility(View.VISIBLE);
             }
@@ -104,13 +151,13 @@ public class BookTypeActivity extends AppCompatActivity {
             }
         });
         lv_content.setOnScrollListener(new AbsListView.OnScrollListener() {
-
             @Override
             public void onScrollStateChanged(AbsListView view, int scrollState) {
             }
 
             @Override
             public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+
                 int current = tag.indexOf(firstVisibleItem);
                 if (currentMenuItem != current && current >= 0) {
                     // 联动  menuListView

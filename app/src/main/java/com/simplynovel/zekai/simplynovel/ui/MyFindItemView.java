@@ -28,7 +28,7 @@ public class MyFindItemView extends RelativeLayout {
 
     public MyFindItemView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-       inflate(context, R.layout.bookfind_item, this);
+        inflate(context, R.layout.bookfind_item, this);
         mIcon =(ImageView) this.findViewById(R.id.find_function_icon);
         mDes = (TextView)this.findViewById(R.id.find_function_des);
         String my_icon = attrs.getAttributeValue(ConstantValues.NAMESPACE, "my_icon");
