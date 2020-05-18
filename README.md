@@ -33,7 +33,7 @@
    
    小说阅读模块：
    
-   ![小说阅读模块](https://github.com/pressureKai/SimpleNovel/blob/master/readPage.png)      
+   ![小说阅读模块](/readPage.png)      
    
    小说阅读设置模块：
    
